@@ -1,0 +1,9 @@
+Trả lời câu hỏi dựa trên evidence bên dưới.
+Mỗi ý phải kèm nguồn dạng [chunk_id], dùng đúng id có trong evidence, ví dụ [WEB101-w02-concept].
+Nếu evidence không đủ để trả lời, chỉ viết đúng một từ: KHONG_DU_CAN_CU
+
+<evidence>
+{evidence}
+</evidence>
+
+<question>{question}</question>

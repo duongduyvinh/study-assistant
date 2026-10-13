@@ -1,0 +1,14 @@
+{"id": "q01", "question": "Tuần 2 học gì?", "course_id": "WEB101", "type": "answerable", "gold_doc_ids": ["web101-lesson-plan"], "expected_points": ["Selector", "Box Model"]}
+{"id": "q02", "question": "Bài tập tuần 3 là gì?", "course_id": "WEB101", "type": "answerable", "gold_doc_ids": ["web101-lesson-plan"], "expected_points": ["tính tổng"]}
+{"id": "q03", "question": "Cấu trúc thẻ HTML và danh sách được học ở tuần nào?", "course_id": "WEB101", "type": "answerable", "gold_doc_ids": ["web101-lesson-plan"], "expected_points": ["tuần 1"]}
+{"id": "q04", "question": "Box model gồm những gì?", "course_id": "WEB101", "type": "answerable", "gold_doc_ids": ["web101-lesson-plan"], "expected_points": ["margin", "padding", "border"]}
+{"id": "q05", "question": "Closure là gì và thao tác DOM học ở môn nào?", "course_id": "WEB201", "type": "answerable", "gold_doc_ids": ["web201-lesson-plan"], "expected_points": ["closure", "DOM"]}
+{"id": "q06", "question": "Tuần nào học Promise và async/await?", "course_id": "WEB201", "type": "answerable", "gold_doc_ids": ["web201-lesson-plan"], "expected_points": ["tuần 2"]}
+{"id": "q07", "question": "Tuần 4 học gì?", "course_id": "WEB101", "type": "near_miss", "gold_doc_ids": [], "expected_behavior": "abstain: môn WEB101 chỉ có tuần 1 đến 3"}
+{"id": "q08", "question": "React hook là gì?", "course_id": "WEB101", "type": "near_miss", "gold_doc_ids": [], "expected_behavior": "abstain: sát chủ đề web nhưng không có trong lesson plan"}
+{"id": "q09", "question": "Cách nấu phở bò?", "course_id": "WEB101", "type": "no_answer", "gold_doc_ids": [], "expected_behavior": "abstain: ngoài chương trình"}
+{"id": "q10", "question": "Docker và Kubernetes khác nhau thế nào?", "course_id": "WEB201", "type": "no_answer", "gold_doc_ids": [], "expected_behavior": "abstain: ngoài chương trình"}
+{"id": "q11", "question": "Giá bitcoin hôm nay là bao nhiêu?", "course_id": "WEB101", "type": "no_answer", "gold_doc_ids": [], "expected_behavior": "abstain: ngoài chương trình"}
+{"id": "q12", "question": "Thủ đô của Pháp là gì?", "course_id": "WEB201", "type": "no_answer", "gold_doc_ids": [], "expected_behavior": "abstain: ngoài chương trình"}
+{"id": "q13", "question": "Tuần 2 học gì?", "course_id": null, "type": "ambiguous", "gold_doc_ids": [], "expected_behavior": "clarify: thiếu mã môn"}
+{"id": "q14", "question": "Bài tập là gì?", "course_id": null, "type": "ambiguous", "gold_doc_ids": [], "expected_behavior": "clarify: thiếu mã môn"}
