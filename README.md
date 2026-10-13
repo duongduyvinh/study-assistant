@@ -17,24 +17,26 @@ Chạy lẻ: `python -m t3.cli ask "Tuần 2 học gì?" --course WEB101`, `pyth
 
 ## Bản đồ file (mỗi bước pipeline một file)
 
-| File | Việc | Mục đề | Gợi ý phụ trách |
+> **Phân công thành viên**: **A** = Phương, **B** = Bạn, **C** = Vinh.
+
+| File | Việc | Mục đề | Phụ trách |
 | --- | --- | --- | --- |
-| `data/lesson_plans/*.md` | Lesson plan có front matter (doc_id, course_id, version, owner) | M1 | A |
+| `data/lesson_plans/*.md` | Lesson plan có front matter (doc_id, course_id, version, owner) | M1 | Phương |
 | `src/t3/types.py` | Dataclass: Chunk, Query, Filters, SearchHit, GateDecision, Usage, ToolCall, AgentStep, RunContext... | M2 | chung |
-| `src/t3/config.py` | Đọc `.env` và biến môi trường | M0 | chung |
-| `src/t3/http.py`, `llm.py` | `call_llm`: timeout, retry backoff, log HTTP, trả Usage; prompt ở `prompts/*.txt` | M3 | B |
-| `src/t3/embeddings.py` | Gemini embedder (taskType tài liệu/câu hỏi), embedder giả để test | M4 | A |
-| `src/t3/ingest.py`, `text.py` | Chunk theo (tuần, loại), tokenize tiếng Việt cho BM25 | M4 | A |
-| `src/t3/index.py` | `chunks.jsonl` (chunk + vector), nạp vào Qdrant `:memory:` + BM25 mỗi process | M4 | A |
-| `src/t3/retrieve.py` | Lọc metadata trước; week-scan, dense, hybrid (RRF) | M4 | A |
-| `src/t3/gate.py` | Gate: `precheck` (clarify) và `decide` (rerank + ngưỡng, hàm thuần) | M4 | A |
-| `src/t3/prompts.py` | Nạp prompt, dựng evidence, kiểm trích dẫn `[chunk_id]` | M3/M4 | B |
-| `src/t3/pipeline.py` | Một request: parse → precheck → retrieve → gate → LLM → kiểm trích dẫn | M4 | A |
-| `src/t3/tools.py`, `notes.py` | 5 tool dùng chung, trong đó `save_study_note` (ghi) + `list_study_notes` (verify) | M6 | B |
-| `src/t3/agent.py` | Agent loop tự viết: MAX_STEPS, parse action an toàn, tool lỗi trả `Error: ...`, ép verify sau khi ghi | M5 | B |
-| `src/t3/mcp_server.py`, `mcp_client.py` | MCP stdio, stdout sạch; client discover bằng `list_tools()`, cũng là backend cho agent | M7 | B |
-| `src/t3/run_eval.py`, `judge.py` | recall@k, abstain P/R, từ chối nhầm, citation, token; quét ngưỡng; judge Gemma tuỳ chọn | M8 | A |
-| `src/t3/logging_jsonl.py`, `cli.py` | Log mỗi run một file jsonl; `setup`/`ask`/`agent`/`demo` | M0 | chung |
+| `src/t3/config.py` | Đọc `.env` và biến môi trường | M0 | Như |
+| `src/t3/http.py`, `llm.py` | `call_llm`: timeout, retry backoff, log HTTP, trả Usage; prompt ở `prompts/*.txt` | M3 | Như |
+| `src/t3/embeddings.py` | Gemini embedder (taskType tài liệu/câu hỏi), embedder giả để test | M4 | Phương |
+| `src/t3/ingest.py`, `text.py` | Chunk theo (tuần, loại), tokenize tiếng Việt cho BM25 | M4 | Phương |
+| `src/t3/index.py` | `chunks.jsonl` (chunk + vector), nạp vào Qdrant `:memory:` + BM25 mỗi process | M4 | Phương |
+| `src/t3/retrieve.py` | Lọc metadata trước; week-scan, dense, hybrid (RRF) | M4 | Vinh |
+| `src/t3/gate.py` | Gate: `precheck` (clarify) và `decide` (rerank + ngưỡng, hàm thuần) | M4 | Vinh |
+| `src/t3/prompts.py` | Nạp prompt, dựng evidence, kiểm trích dẫn `[chunk_id]` | M3/M4 | Vinh |
+| `src/t3/pipeline.py` | Một request: parse → precheck → retrieve → gate → LLM → kiểm trích dẫn | M4 | Vinh |
+| `src/t3/tools.py`, `notes.py` | 5 tool dùng chung, trong đó `save_study_note` (ghi) + `list_study_notes` (verify) | M6 | Như |
+| `src/t3/agent.py` | Agent loop tự viết: MAX_STEPS, parse action an toàn, tool lỗi trả `Error: ...`, ép verify sau khi ghi | M5 | Như |
+| `src/t3/mcp_server.py`, `mcp_client.py` | MCP stdio, stdout sạch; client discover bằng `list_tools()`, cũng là backend cho agent | M7 | Như |
+| `src/t3/run_eval.py`, `judge.py` | recall@k, abstain P/R, từ chối nhầm, citation, token; quét ngưỡng; judge Gemma tuỳ chọn | M8 | Phương (A) |
+| `src/t3/logging_jsonl.py`, `cli.py` | Log mỗi run một file jsonl; `setup`/`ask`/`agent`/`demo` | M0 | Như |
 | `tests/` | 56 test + `testset.jsonl` (14 câu khởi đầu) | M8 | chung |
 
 ## Một request đi thế nào
