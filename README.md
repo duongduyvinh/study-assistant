@@ -35,7 +35,7 @@ Chạy lẻ: `python -m t3.cli ask "Tuần 2 học gì?" --course WEB101`, `pyth
 | `src/t3/tools.py`, `notes.py` | 5 tool dùng chung, trong đó `save_study_note` (ghi) + `list_study_notes` (verify) | M6 | Như |
 | `src/t3/agent.py` | Agent loop tự viết: MAX_STEPS, parse action an toàn, tool lỗi trả `Error: ...`, ép verify sau khi ghi | M5 | Như |
 | `src/t3/mcp_server.py`, `mcp_client.py` | MCP stdio, stdout sạch; client discover bằng `list_tools()`, cũng là backend cho agent | M7 | Như |
-| `src/t3/run_eval.py`, `judge.py` | recall@k, abstain P/R, từ chối nhầm, citation, token; quét ngưỡng; judge Gemma tuỳ chọn | M8 | Phương (A) |
+| `src/t3/run_eval.py`, `judge.py` | recall@k, abstain P/R, từ chối nhầm, citation, token; quét ngưỡng; judge Gemma tuỳ chọn | M8 | Phương |
 | `src/t3/logging_jsonl.py`, `cli.py` | Log mỗi run một file jsonl; `setup`/`ask`/`agent`/`demo` | M0 | Như |
 | `tests/` | 56 test + `testset.jsonl` (14 câu khởi đầu) | M8 | chung |
 
