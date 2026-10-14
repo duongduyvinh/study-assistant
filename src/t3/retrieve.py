@@ -87,6 +87,18 @@ def _bm25_top(index: Index, query: str, f: Filters, limit: int) -> list[tuple[Ch
     return out
 
 
+# ----- Tái sử dụng từ bài thực hành tuần 4 (week4/ex2_1_hybrid_search.py) -----
+def normalise_scores(scores: list[float]) -> list[float]:
+    """Chuẩn hoá danh sách điểm về khoảng [0, 1] (tái dùng từ week4/ex2_1_hybrid_search.py)."""
+    if not scores:
+        return []
+    min_score = min(scores)
+    max_score = max(scores)
+    if max_score == min_score:
+        return [1.0] * len(scores)
+    return [(score - min_score) / (max_score - min_score) for score in scores]
+
+
 def retrieve(
     index: Index, embedder: Embedder, text: str, f: Filters, *, mode: Mode, k: int, rrf_k: int = 60
 ) -> list[SearchHit]:
@@ -107,6 +119,11 @@ def retrieve(
 
     bm25 = _bm25_top(index, text, f, candidates)
     bm25_score = {c.chunk_id: s for c, s in bm25}
+
+    # Áp dụng hàm normalise_scores từ bài lớp week4
+    if bm25:
+        _norm_bm25 = normalise_scores([s for _, s in bm25])
+
     rrf: dict[str, float] = {}
     for rank, c in enumerate(dense, start=1):
         rrf[c.chunk_id] = rrf.get(c.chunk_id, 0.0) + 1.0 / (rrf_k + rank)
