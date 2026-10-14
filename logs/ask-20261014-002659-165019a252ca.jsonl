@@ -1,0 +1,5 @@
+{"run_id": "165019a252ca", "ts": 1791912419.2763407, "event": "run_start", "query": "Tuần 9 học gì?", "course_id": "WEB101", "week": 9, "types": [], "mode": "hybrid", "today": "2026-10-14"}
+{"run_id": "165019a252ca", "ts": 1791912419.2763674, "event": "retrieval", "via": "none", "n_hits": 0, "top": []}
+{"run_id": "165019a252ca", "ts": 1791912419.2763977, "event": "gate", "action": "abstain", "reason": "no_chunks_for_week", "top1_score": null, "threshold": null}
+{"run_id": "165019a252ca", "ts": 1791912419.2764266, "event": "usage", "stage": "none", "model": "", "prompt_tokens": 0, "completion_tokens": 0, "latency_ms": 0, "total_tokens": 0}
+{"run_id": "165019a252ca", "ts": 1791912419.276434, "event": "final", "status": "abstained", "citation_ok": null, "total_tokens": 0}
