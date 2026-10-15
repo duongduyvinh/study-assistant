@@ -12,3 +12,7 @@
 {"id": "q12", "question": "Thủ đô của Pháp là gì?", "course_id": "WEB201", "type": "no_answer", "gold_doc_ids": [], "expected_behavior": "abstain: ngoài chương trình"}
 {"id": "q13", "question": "Tuần 2 học gì?", "course_id": null, "type": "ambiguous", "gold_doc_ids": [], "expected_behavior": "clarify: thiếu mã môn"}
 {"id": "q14", "question": "Bài tập là gì?", "course_id": null, "type": "ambiguous", "gold_doc_ids": [], "expected_behavior": "clarify: thiếu mã môn"}
+{"id": "q15", "question": "Bài tập của tuần 1 môn WEB201 yêu cầu làm gì?", "course_id": "WEB201", "type": "answerable", "gold_doc_ids": ["web201-lesson-plan"], "expected_points": ["to-do list", "DOM"]}
+{"id": "q16", "question": "TypeScript interface định nghĩa như thế nào?", "course_id": "WEB101", "type": "near_miss", "gold_doc_ids": [], "expected_behavior": "abstain: liên quan công nghệ web nhưng ngoài giáo trình"}
+{"id": "q17", "question": "Quy tắc chơi cờ vua cơ bản gồm những gì?", "course_id": "WEB101", "type": "no_answer", "gold_doc_ids": [], "expected_behavior": "abstain: ngoài chương trình đào tạo"}
+{"id": "q18", "question": "Nội dung ôn tập tuần 1 gồm những phần nào?", "course_id": null, "type": "ambiguous", "gold_doc_ids": [], "expected_behavior": "clarify: thiếu mã môn học"}
