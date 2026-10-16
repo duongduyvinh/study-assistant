@@ -85,6 +85,8 @@ class Usage:
     model: str = ""
     prompt_tokens: int = 0
     completion_tokens: int = 0
+    calls: int = 0
+    max_prompt: int = 0
     latency_ms: int = 0
 
     @property
