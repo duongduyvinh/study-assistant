@@ -85,7 +85,7 @@ def test_log_file_one_line_per_event_with_run_id(index, embedder, settings):
     path = write_run_log(ctx, settings.logs_dir, "t")
     rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
     assert {r["run_id"] for r in rows} == {ctx.query.run_id}
-    assert [r["event"] for r in rows] == ["run_start", "retrieval", "gate", "usage", "final"]
+    assert [r["event"] for r in rows] == ["run_start", "retrieval", "gate", "usage", "final", "usage_summary"]
 
 
 def test_citation_helpers():

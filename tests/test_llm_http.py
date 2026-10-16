@@ -30,6 +30,7 @@ def test_success_returns_usage_and_strips_think():
     text, usage = call_llm(MSG, stage="answer", settings=settings(), client=httpx.Client(transport=httpx.MockTransport(handler)))
     assert text == "Đáp án" and (usage.prompt_tokens, usage.completion_tokens, usage.total_tokens) == (11, 7, 18)
     assert usage.stage == "answer"
+    assert usage.calls == 1 and usage.max_prompt == 11  # 11 là pt trong ok_json
 
 
 def test_transient_errors_are_retried_and_logged(caplog):

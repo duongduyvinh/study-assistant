@@ -55,11 +55,14 @@ def call_llm(
         usage_raw = data.get("usage") or {}
     except (ValueError, KeyError, IndexError, TypeError) as exc:
         raise LLMError(f"Error: phản hồi LLM sai định dạng: {resp.text[:200]}") from exc
+    prompt_tokens = int(usage_raw.get("prompt_tokens", 0)) #đọc 1 lần cho prompt_tokens vs max_prompt
     usage = Usage(
         stage=stage,
         model=str(data.get("model", s.llm_model)),
-        prompt_tokens=int(usage_raw.get("prompt_tokens", 0)),
+        prompt_tokens=prompt_tokens,
         completion_tokens=int(usage_raw.get("completion_tokens", 0)),
+        calls=1,
+        max_prompt = prompt_tokens,
         latency_ms=latency_ms,
     )
     return strip_think(text), usage
