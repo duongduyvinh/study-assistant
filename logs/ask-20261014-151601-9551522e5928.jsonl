@@ -1,0 +1,4 @@
+{"run_id": "9551522e5928", "ts": 1791965761.5588741, "event": "run_start", "query": "Tuần 2 học gì?", "course_id": null, "week": 2, "types": [], "mode": "hybrid", "today": "2026-10-14"}
+{"run_id": "9551522e5928", "ts": 1791965761.558887, "event": "gate", "action": "clarify", "reason": "missing_course_id"}
+{"run_id": "9551522e5928", "ts": 1791965761.558902, "event": "usage", "stage": "none", "model": "", "prompt_tokens": 0, "completion_tokens": 0, "latency_ms": 0, "total_tokens": 0}
+{"run_id": "9551522e5928", "ts": 1791965761.558906, "event": "final", "status": "clarified", "citation_ok": null, "total_tokens": 0}

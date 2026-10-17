@@ -4,7 +4,7 @@ from dataclasses import replace
 from datetime import date
 
 from t3.gate import decide, precheck
-from t3.retrieve import infer_types, retrieve, week_from_text
+from t3.retrieve import infer_types, normalise_scores, retrieve, week_from_text
 from t3.types import Filters, Query
 
 
@@ -41,9 +41,12 @@ def test_course_filter_is_hard(index, embedder):
 
 
 def test_hybrid_has_rrf_and_bm25_scores_and_dense_has_none(index, embedder):
+    assert normalise_scores([]) == []
+    assert normalise_scores([5.0, 5.0]) == [1.0, 1.0]
+    assert normalise_scores([2.0, 4.0, 6.0]) == [0.0, 0.5, 1.0]
     hy = retrieve(index, embedder, "Box Model margin padding", Filters("WEB101"), mode="hybrid", k=3)
     assert hy[0].chunk.chunk_id == "WEB101-w02-concept"
-    assert hy[0].rrf_score and hy[0].bm25_score and hy[0].dense_score
+    assert hy[0].rrf_score and hy[0].bm25_score == 1.0 and hy[0].dense_score
     de = retrieve(index, embedder, "Box Model margin padding", Filters("WEB101"), mode="dense", k=3)
     assert de[0].rrf_score is None and de[0].via == "dense"
 

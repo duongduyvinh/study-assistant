@@ -118,18 +118,16 @@ def retrieve(
         ]
 
     bm25 = _bm25_top(index, text, f, candidates)
-    bm25_score = {c.chunk_id: s for c, s in bm25}
-
-    # Áp dụng hàm normalise_scores từ bài lớp week4
-    if bm25:
-        _norm_bm25 = normalise_scores([s for _, s in bm25])
+    # Áp dụng hàm normalise_scores từ bài lớp week4 để chuẩn hoá điểm BM25 về [0, 1]
+    norm_bm25 = normalise_scores([s for _, s in bm25])
+    bm25_score = {c.chunk_id: ns for (c, _), ns in zip(bm25, norm_bm25)}
 
     rrf: dict[str, float] = {}
     for rank, c in enumerate(dense, start=1):
         rrf[c.chunk_id] = rrf.get(c.chunk_id, 0.0) + 1.0 / (rrf_k + rank)
     for rank, (c, _) in enumerate(bm25, start=1):
         rrf[c.chunk_id] = rrf.get(c.chunk_id, 0.0) + 1.0 / (rrf_k + rank)
-    fused = sorted(rrf, key=lambda cid: -rrf[cid])[:k]
+    fused = sorted(rrf, key=lambda cid: (-rrf[cid], -bm25_score.get(cid, 0.0)))[:k]
     return [
         SearchHit(
             chunk=index.by_id[cid], rank=i + 1, via="hybrid",

@@ -1,0 +1,6 @@
+{"run_id": "c79b1f9da293", "ts": 1791965743.2140996, "event": "run_start", "query": "Tuần 2 học gì?", "course_id": "WEB101", "week": 2, "types": [], "mode": "hybrid", "today": "2026-10-14"}
+{"run_id": "c79b1f9da293", "ts": 1791965743.2141252, "event": "retrieval", "via": "week_scan", "n_hits": 2, "top": ["WEB101-w02-concept", "WEB101-w02-assessment"]}
+{"run_id": "c79b1f9da293", "ts": 1791965743.2141411, "event": "gate", "action": "answer", "reason": "week_found", "top1_score": null, "threshold": null}
+{"run_id": "c79b1f9da293", "ts": 1791965743.21442, "event": "error", "message": "Error: thiếu LLM_API_KEY, hãy điền trong .env"}
+{"run_id": "c79b1f9da293", "ts": 1791965743.2144368, "event": "usage", "stage": "none", "model": "", "prompt_tokens": 0, "completion_tokens": 0, "latency_ms": 0, "total_tokens": 0}
+{"run_id": "c79b1f9da293", "ts": 1791965743.2144413, "event": "final", "status": "error", "citation_ok": null, "total_tokens": 0}
