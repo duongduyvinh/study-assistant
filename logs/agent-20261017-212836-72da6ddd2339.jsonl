@@ -1,0 +1,12 @@
+{"run_id": "72da6ddd2339", "ts": 1792247316.0829377, "event": "run_start", "query": "Ghi chú tuần 2 WEB101: ôn Selector và Box Model", "course_id": "WEB101", "mode": "agent", "max_steps": 6}
+{"run_id": "72da6ddd2339", "ts": 1792247317.1603181, "event": "usage", "stage": "agent", "model": "gemini-3.5-flash-lite", "prompt_tokens": 553, "completion_tokens": 51, "calls": 1, "max_prompt": 553, "latency_ms": 1076, "total_tokens": 604}
+{"run_id": "72da6ddd2339", "ts": 1792247317.1603448, "event": "tool_call", "index": 1, "name": "save_study_note", "args": {"course_id": "WEB101", "week": "2", "note": "ôn Selector và Box Model"}}
+{"run_id": "72da6ddd2339", "ts": 1792247317.1616516, "event": "tool_result", "index": 1, "name": "save_study_note", "ok": true, "content": "ok: đã lưu note_id=535393f2 (môn WEB101, tuần 2)"}
+{"run_id": "72da6ddd2339", "ts": 1792247318.5619335, "event": "usage", "stage": "agent", "model": "gemini-3.5-flash-lite", "prompt_tokens": 643, "completion_tokens": 24, "calls": 1, "max_prompt": 643, "latency_ms": 1400, "total_tokens": 667}
+{"run_id": "72da6ddd2339", "ts": 1792247318.5619595, "event": "tool_call", "index": 2, "name": "list_study_notes", "args": {"course_id": "WEB101"}}
+{"run_id": "72da6ddd2339", "ts": 1792247318.5622668, "event": "tool_result", "index": 2, "name": "list_study_notes", "ok": true, "content": "note_id=535393f2 | tuần 2 | ôn Selector và Box Model | 2026-10-17T21:28:37"}
+{"run_id": "72da6ddd2339", "ts": 1792247318.562277, "event": "verify", "ok": true, "note_id": "535393f2"}
+{"run_id": "72da6ddd2339", "ts": 1792247319.8274043, "event": "usage", "stage": "agent", "model": "gemini-3.5-flash-lite", "prompt_tokens": 721, "completion_tokens": 38, "calls": 1, "max_prompt": 721, "latency_ms": 1265, "total_tokens": 759}
+{"run_id": "72da6ddd2339", "ts": 1792247319.8274474, "event": "agent_action", "index": 3, "kind": "final"}
+{"run_id": "72da6ddd2339", "ts": 1792247319.8274617, "event": "final", "status": "answered", "citation_ok": null, "total_tokens": 2030}
+{"run_id": "72da6ddd2339", "ts": 1792247319.8280976, "event": "usage_summary", "calls": 3, "prompt_tokens": 1917, "completion_tokens": 113, "max_prompt": 721}

@@ -1,3 +1,3 @@
 config,n,recall@k,recall@k_no_week_scan,action_accuracy,abstain_precision,abstain_recall,false_refusal_rate,clarify_accuracy,citation_ok_rate,points_hit,tokens
-dense,14,1.0,1.0,0.9285714285714286,0.8571428571428571,1.0,0.16666666666666666,1.0,,,0
-hybrid,14,1.0,1.0,0.9285714285714286,0.8571428571428571,1.0,0.16666666666666666,1.0,,,0
+dense,18,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,2914
+hybrid,18,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,2913

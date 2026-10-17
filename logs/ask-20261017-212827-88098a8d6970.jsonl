@@ -1,0 +1,6 @@
+{"run_id": "88098a8d6970", "ts": 1792247307.0798912, "event": "run_start", "query": "Tuần 2 học gì?", "course_id": "WEB101", "week": 2, "types": [], "mode": "hybrid", "today": "2026-10-17"}
+{"run_id": "88098a8d6970", "ts": 1792247307.0799153, "event": "retrieval", "via": "week_scan", "n_hits": 2, "top": ["WEB101-w02-concept", "WEB101-w02-assessment"]}
+{"run_id": "88098a8d6970", "ts": 1792247307.0799322, "event": "gate", "action": "answer", "reason": "week_found", "top1_score": null, "threshold": null}
+{"run_id": "88098a8d6970", "ts": 1792247308.5264285, "event": "usage", "stage": "answer", "model": "gemini-3.5-flash-lite", "prompt_tokens": 307, "completion_tokens": 45, "calls": 1, "max_prompt": 307, "latency_ms": 1445, "total_tokens": 352}
+{"run_id": "88098a8d6970", "ts": 1792247308.526467, "event": "final", "status": "answered", "citation_ok": true, "total_tokens": 352}
+{"run_id": "88098a8d6970", "ts": 1792247308.5271983, "event": "usage_summary", "calls": 1, "prompt_tokens": 307, "completion_tokens": 45, "max_prompt": 307}
